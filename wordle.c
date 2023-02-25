@@ -39,6 +39,11 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
         printf("Olmayan harfler: %s\n", olmayan);
     }
 }
+void str_yazdir(char str[5]){
+    for (int i = 0; str[i] != '\0'; i++) {
+    printf("%c ", str[i]);
+    }
+}
 
 
 int main(){
