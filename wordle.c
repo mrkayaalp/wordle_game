@@ -6,9 +6,13 @@
 
 
 void kelime_al(char tahmin[kelime_uzulugu]){
-    printf("%d harfli bir kelime tahmin edin: \t", kelime_uzulugu);
+    printf("%d harfli bir kelime tahmin edin:   ", kelime_uzulugu);
     scanf("%s", tahmin);
+    if(!(strlen(tahmin) == kelime_uzulugu)){
+        printf("Lutfen Verilen Uzunlukta Bir Kelime Giriniz\n");
+        kelime_al(tahmin);
     }
+}
 
 void str_yazdir(char str[], int uzunluk){
     for (int i = 0; i<uzunluk; i++) {
@@ -61,6 +65,7 @@ void oyun(char hedef[kelime_uzulugu], char tahmin[], char cikti[], char yanlis[]
         str_yazdir(yanlis, kelime_uzulugu);        
         printf("Olmayan harfler:   ");
         str_yazdir(olmayan, 20);
+        printf("\n");
        
     }
     if(flag)
