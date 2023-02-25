@@ -17,8 +17,8 @@ void str_yazdir(char str[]){
 }
 
 void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmayan[] ){
+    str_yazdir(cikti);
     for(int c = 0; c < tahmin_sayisi; c++){
-        str_yazdir(cikti);
         kelime_al(tahmin);
         int a = 0;
         int b = 0;
@@ -31,7 +31,6 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
                         cikti[i] = tahmin[i];  
                     else{
                         yanlis[a] = tahmin[i];
-                        printf("%c", yanlis[a]);
                         cikti[i] = '_';
                         a++;
                     }
@@ -50,6 +49,8 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
         }
         printf("Yeri yanlis olan harfler:  ");
         str_yazdir(yanlis);
+        
+        
         printf("Olmayan harfler:   ");
         str_yazdir(olmayan);
        
@@ -62,8 +63,8 @@ int main(){
     char tahmin[5];
     char hedef[] = {"roket"};
     char cikti[] = {'_', '_', '_', '_', '_', '\0'};    
-    char olmayan[5];
-    char yanlis[5];
+    char olmayan[5] = {'\0'};
+    char yanlis[5] = {'\0'};
 
     oyun(hedef, tahmin, cikti, yanlis, olmayan);
     
