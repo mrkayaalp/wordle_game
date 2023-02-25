@@ -9,8 +9,16 @@ void kelime_al(char tahmin[5]){
     scanf("%s", tahmin);
     }
 
+void str_yazdir(char str[]){
+    for (int i = 0; str[i] != '\0'; i++) {
+    printf("%c ", str[i]);
+    }
+    printf("\n");
+}
+
 void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmayan[] ){
     for(int c = 0; c < tahmin_sayisi; c++){
+        str_yazdir(cikti);
         kelime_al(tahmin);
         int bulduk = 0;
         int a = 0;
@@ -34,15 +42,18 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
                 b++;
             }
         }
-        printf("%s\n", cikti);
-        printf("Yeri yanlis olan harfler: %s\n", yanlis);
-        printf("Olmayan harfler: %s\n", olmayan);
+        str_yazdir(cikti);
+         if(strcmp(tahmin, hedef) == 0 ){
+            printf("!!!!!Tebrikler Doğru Tahmin Ettiniz!!!!!");
+            break;
+        }
+        printf("Yeri yanlis olan harfler:  ");
+        str_yazdir(yanlis);
+        printf("Olmayan harfler:   ");
+        str_yazdir(olmayan);
+       
     }
-}
-void str_yazdir(char str[5]){
-    for (int i = 0; str[i] != '\0'; i++) {
-    printf("%c ", str[i]);
-    }
+
 }
 
 
@@ -52,9 +63,10 @@ int main(){
     char cikti[] = {'_', '_', '_', '_', '_', '\0'};    
     char olmayan[5];
     char yanlis[5];
+
+    oyun(hedef, tahmin, cikti, yanlis, olmayan);
     
-    printf("%s", cikti);
-    
+
 
     
 
