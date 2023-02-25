@@ -20,10 +20,10 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
     for(int c = 0; c < tahmin_sayisi; c++){
         str_yazdir(cikti);
         kelime_al(tahmin);
-        int bulduk = 0;
         int a = 0;
         int b = 0;
         for(int i = 0; i<5; i++){
+            int bulduk = 0;
             for(int j =0; j<5; j++){
                 if(tahmin[i] == hedef[j]){
                     bulduk = 1;
@@ -31,6 +31,7 @@ void oyun(char hedef[5], char tahmin[], char cikti[], char yanlis[], char olmaya
                         cikti[i] = tahmin[i];  
                     else{
                         yanlis[a] = tahmin[i];
+                        printf("%c", yanlis[a]);
                         cikti[i] = '_';
                         a++;
                     }
