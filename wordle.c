@@ -2,7 +2,7 @@
 #include <string.h>
 
 #define tahmin_sayisi 10
-#define kelime_uzulugu 5
+#define kelime_uzulugu 6
 
 
 void kelime_al(char tahmin[kelime_uzulugu]){
@@ -56,7 +56,7 @@ void oyun(char hedef[kelime_uzulugu], char tahmin[], char cikti[], char yanlis[]
             }
         }
         str_yazdir(cikti, kelime_uzulugu);
-         if(strcmp(tahmin, hedef) == 0 ){
+        if((strcmp(tahmin, hedef) == 0 )){
             printf("!!!!!Tebrikler Doğru Tahmin Ettiniz!!!!!\n");
             flag = 0;
             break;
@@ -74,8 +74,8 @@ void oyun(char hedef[kelime_uzulugu], char tahmin[], char cikti[], char yanlis[]
 
 
 int main(){
-    char tahmin[kelime_uzulugu];
-    char hedef[] = {"leyla"}; //değiştirdiğiniz hedef kelimenin uzunluğunu yukarda "kelime_uzunlugu"'undan değiştiriniz
+    char tahmin[kelime_uzulugu+1];
+    char hedef[] = {"oduncu"}; //değiştirdiğiniz hedef kelimenin uzunluğunu yukarda "kelime_uzunlugu"'undan değiştiriniz
     char cikti[] = {"_______________"};    
     char olmayan[20] = {'\0'};
     char yanlis[kelime_uzulugu] = {'\0'};
